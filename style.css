@@ -1,0 +1,191 @@
+:root {
+    --main-bg-color: #000000;
+    --accent-bg-color: #262A56;
+    --main-text-color: #E3CCAE;
+    --accent-text-color: #B8621B;
+    --main-font-family: 'Libre Baskerville', serif;
+    --accent-font-family: 'Satisfy', cursive;
+}
+
+body {
+    background: var(--main-text-color);
+    color: var(--main-text-color);
+    font-family: var(--main-font-family);
+    color: black;
+}
+
+a {
+    color: var(--accent-text-color);
+    text-decoration: none;
+    transition: color 5ms linear;
+    text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+    color: var(--main-text-color)
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+section {
+    padding: 20px;
+}
+
+.full-page {
+    display: grid;
+    grid-template-areas:
+        'header'
+        'sidebar'
+        'experience';
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    max-width: 1000px;
+    background: var(--main-bg-color);
+    margin: 20px auto 20px auto;
+}
+
+.experience {
+    grid-area: experience;
+    color: var(--main-text-color)
+}
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+    background-color: var(--accent-text-color);
+    color: var(--main-text-color)
+}
+
+.header a {
+    color: var(--main-text-color)
+}
+
+.header-skills{
+    color: var(--main-text-color)
+}
+
+.name,
+.profession {
+    text-align: center;
+    font-family: var(--accent-font-family);
+}
+
+.name{
+    margin-bottom: 40px;
+    font-size: 70px;
+}
+
+.profession{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+
+@media screen and (min-width: 768px) {
+    .full-page {
+        grid-template-areas: "header header"
+            "sidebar experience";
+        grid-template-columns: 1fr 2fr;
+        line-height: 32px;
+    }
+
+    .sidebar {
+        min-height: 100vh;
+    }
+
+    .experience {
+        min-height: 100vh;
+    }
+
+    .header {
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .name,
+    .profession {
+        text-align: left;
+    }
+
+    .profession{
+        margin-bottom: 0;
+    }
+}
+
+.sidebar {
+    background: var(--accent-bg-color);
+    color: var(--main-text-color);
+    grid-area: sidebar;
+    display: grid;
+    gap: 20px;
+}
+
+.skills-h {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+}
+
+.skills li {
+    justify-self: center;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.experience-list {
+    display: grid;
+    gap: 10px;
+}
+
+.heading-experience {
+    text-align: center;
+}
+
+.experience-item {
+    padding: 10px;
+    border: 1px solid var(--main-bg-color);
+}
+
+
+.experience-h {
+    color: var(--accent-text-color); 
+    margin-bottom: 5px;   
+}
+
+.hide {
+    display: none;
+}
+
+.more {
+    color: var(--accent-font-family);
+    background: var(--accent-bg-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+}
